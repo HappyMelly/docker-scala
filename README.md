@@ -3,7 +3,7 @@ Docker-Scala
 
 ## Summary
 
-Repository name in Docker Hub: **[williamyeh/scala](https://registry.hub.docker.com/u/williamyeh/scala/)**
+Repository name in Docker Hub: **[williamyeh/scala](https://registry.hub.docker.com/u/bad79s/scala/)**
 
 This repository contains Dockerized [Java](https://www.java.com/) and [Scala](http://www.scala-lang.org), published to the public [Docker Hub](https://registry.hub.docker.com/) via **automated build** mechanism.
 
@@ -15,7 +15,7 @@ This docker image contains the following software stack:
 
 - OS: Debian jessie.
 
-- Java: Oracle JDK 1.7.0
+- Java: Oracle JDK 1.8.x
 
 - Scala: 2.11.4, 2.11.2, 2.10.4 (see [tag list](https://registry.hub.docker.com/u/williamyeh/scala/tags/manage/) for details)
 
@@ -25,20 +25,7 @@ This docker image contains the following software stack:
 
 ### Dependencies
 
-* [williamyeh/java7](https://github.com/William-Yeh/docker-java7)
-
-
-### History
-
-* 0.6 - Install sbt manually instead of deb.
-
-* 0.5 - Support version tags.
-
-* 0.4 - Fix APT dependency: openjdk-6-jre --> oracle-java7-installer.
-
-* 0.3 - Change the Java dependency from [pulse00/java](https://github.com/dubture-dockerfiles/java) to [williamyeh/java7](https://github.com/William-Yeh/docker-java7).
-
-* 0.2 - This repository was forked from [pulse00/scala](https://registry.hub.docker.com/u/pulse00/scala/).
+* [williamyeh/java8](https://github.com/William-Yeh/docker-java8)
 
 
 
@@ -49,19 +36,19 @@ This docker image contains the following software stack:
 Latest version:
 
    ```
-   $ docker pull williamyeh/scala:latest
+   $ docker pull bad79s/scala:latest
    ```
 
 All versions:
 
    ```
-   $ docker pull williamyeh/scala
+   $ docker pull bad79s/scala
    ```
 
 Specific version:
 
    ```
-   $ docker pull williamyeh/scala:2.11.4
+   $ docker pull bad79s/scala:2.11.4
    ```
 
 
@@ -74,5 +61,5 @@ Used mostly as a base image for other Scala-based applications. But if you'd lik
 #### Run `scala` REPL
 
 ```
-$ docker run -it --rm williamyeh/scala
+$ docker run -it --rm bad79s/scala
 ```
