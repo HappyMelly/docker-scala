@@ -3,7 +3,7 @@ Docker-Scala
 
 ## Summary
 
-Repository name in Docker Hub: **[williamyeh/scala](https://registry.hub.docker.com/u/bad79s/scala/)**
+Repository name in Docker Hub: **[bad79s/scala](https://registry.hub.docker.com/u/bad79s/scala/)**
 
 This repository contains Dockerized [Java](https://www.java.com/) and [Scala](http://www.scala-lang.org), published to the public [Docker Hub](https://registry.hub.docker.com/) via **automated build** mechanism.
 
@@ -17,7 +17,7 @@ This docker image contains the following software stack:
 
 - Java: Oracle JDK 1.8.x
 
-- Scala: 2.11.4, 2.11.2, 2.10.4 (see [tag list](https://registry.hub.docker.com/u/williamyeh/scala/tags/manage/) for details)
+- Scala: 2.11.4 (see [tag list](https://registry.hub.docker.com/u/bad79s/scala/tags/manage/) for details)
 
 - Sbt: 0.13.6
 
