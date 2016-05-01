@@ -17,7 +17,7 @@ This docker image contains the following software stack:
 
 - Java: Oracle JDK 1.8.x
 
-- Scala: 2.11.4 (see [tag list](https://registry.hub.docker.com/u/bad79s/scala/tags/manage/) for details)
+- Scala: 2.11.7 (see [tag list](https://registry.hub.docker.com/u/sery0ga/scala/tags/manage/) for details)
 
 - Sbt: 0.13.8
 
@@ -48,7 +48,7 @@ All versions:
 Specific version:
 
    ```
-   $ docker pull sery0ga/scala:2.11.4
+   $ docker pull sery0ga/scala:2.11.7
    ```
 
 
