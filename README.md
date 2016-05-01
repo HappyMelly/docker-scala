@@ -3,7 +3,7 @@ Docker-Scala
 
 ## Summary
 
-Repository name in Docker Hub: **[bad79s/scala](https://registry.hub.docker.com/u/bad79s/scala/)**
+Repository name in Docker Hub: **[sery0ga/scala](https://registry.hub.docker.com/u/sery0ga/scala/)**
 
 This repository contains Dockerized [Java](https://www.java.com/) and [Scala](http://www.scala-lang.org), published to the public [Docker Hub](https://registry.hub.docker.com/) via **automated build** mechanism.
 
@@ -19,7 +19,7 @@ This docker image contains the following software stack:
 
 - Scala: 2.11.4 (see [tag list](https://registry.hub.docker.com/u/bad79s/scala/tags/manage/) for details)
 
-- Sbt: 0.13.6
+- Sbt: 0.13.8
 
 
 
@@ -36,19 +36,19 @@ This docker image contains the following software stack:
 Latest version:
 
    ```
-   $ docker pull bad79s/scala:latest
+   $ docker pull sery0ga/scala:latest
    ```
 
 All versions:
 
    ```
-   $ docker pull bad79s/scala
+   $ docker pull sery0ga/scala
    ```
 
 Specific version:
 
    ```
-   $ docker pull bad79s/scala:2.11.4
+   $ docker pull sery0ga/scala:2.11.4
    ```
 
 
@@ -61,5 +61,5 @@ Used mostly as a base image for other Scala-based applications. But if you'd lik
 #### Run `scala` REPL
 
 ```
-$ docker run -it --rm bad79s/scala
+$ docker run -it --rm sery0ga/scala
 ```

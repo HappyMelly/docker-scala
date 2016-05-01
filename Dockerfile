@@ -1,18 +1,18 @@
 # Scala and sbt on Java 8
 #
-# URL: https://github.com/bad79s/docker-scala
+# URL: https://github.com/HappyMelly/docker-scala
 #
-# forked from: williamyeh/scala
+# forked from: bad79s/scala
 #              - https://github.com/William-Yeh/docker-scala
 #
 # Version     0.1
 
-FROM williamyeh/java8
-MAINTAINER bad79s <bad79s@lethe.kr>
+FROM sery0ga/scala
+MAINTAINER sery0ga <skotlov@gmail.com>
 
 
 ENV SCALA_TARBALL http://www.scala-lang.org/files/archive/scala-2.11.4.deb
-ENV SBT_JAR       https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.6/sbt-launch.jar
+ENV SBT_JAR       https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.8/sbt-launch.jar
 
 
 
