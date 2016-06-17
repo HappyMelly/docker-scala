@@ -40,6 +40,12 @@ RUN \
     \
     \
     \
+    echo "===> install Scala"  && \
+    DEBIAN_FRONTEND=noninteractive \
+        apt-get install -y --force-yes curl  && \
+    \
+    \
+    \    
     echo "===> clean up..."  && \
     rm -f *.deb  && \
     apt-get clean  && \
