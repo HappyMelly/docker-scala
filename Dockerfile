@@ -11,7 +11,7 @@ FROM sery0ga/scala
 MAINTAINER sery0ga <skotlov@gmail.com>
 
 
-ENV SCALA_TARBALL http://www.scala-lang.org/files/archive/scala-2.11.7.deb
+ENV SCALA_TARBALL http://www.scala-lang.org/files/archive/scala-2.11.8.deb
 ENV SBT_JAR       https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.8/sbt-launch.jar
 
 
