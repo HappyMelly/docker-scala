@@ -56,7 +56,7 @@ RUN echo "====> install boxfuse" && \
     tar xzf $BOXFUSE_DIR.tar.gz && \
     rm $BOXFUSE_DIR.tar.gz
 
-ENV PATH /tmp/boxfuse:$PATH
+ENV PATH /usr/local/bin/boxfuse:$PATH
 
 RUN echo "===> install sbt"  && \
     wget -nv -P /usr/local/bin/  $SBT_JAR    && \
