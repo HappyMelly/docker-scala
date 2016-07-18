@@ -37,6 +37,7 @@ RUN echo "===> install Scala"  && \
 
 RUN echo "===> get activator" && \
     cd /usr/local/bin && \
+    rm -rf activator* && \
     wget $ACTIVATOR && \
     unzip *.zip && \
     rm *.zip && \ 
@@ -52,6 +53,7 @@ RUN echo "====> install activator" && \
 
 RUN echo "====> install boxfuse" && \
     cd /usr/local/bin/ && \
+    rm -rf boxfuse* && \
     wget $BOXFUSE && \
     tar xzf $BOXFUSE_DIR.tar.gz && \
     rm $BOXFUSE_DIR.tar.gz
