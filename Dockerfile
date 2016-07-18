@@ -46,7 +46,7 @@ ENV PATH /tmp/activator-$ACTIVATOR_VERSION-minimal/bin/:$PATH
 
 RUN echo "====> install activator" && \
     cd /tmp && \
-    activator new dummy && \
+    activator new dummy play-scala && \
     rm -rf dummy
 
 
