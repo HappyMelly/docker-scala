@@ -42,7 +42,7 @@ RUN echo "===> install sbt"  && \
     cd /tmp && \
     wget $SBT_TARBALL && \
     tar xzf *.tgz && \
-    cp -R -f sbt/bin/ /usr/local/bin/
+    cp -f sbt/bin/* /usr/local/bin/
 
 RUN echo "===> get activator" && \
     cd /usr/local/bin && \
