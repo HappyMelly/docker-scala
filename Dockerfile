@@ -36,13 +36,13 @@ RUN echo "===> install Scala"  && \
     dpkg -i scala-*.deb
 
 RUN echo "===> get activator" && \
-    cd /tmp && \
+    cd /usr/local/bin && \
     wget $ACTIVATOR && \
     unzip *.zip && \
     rm *.zip && \ 
     cd /
 
-ENV PATH /tmp/activator-$ACTIVATOR_VERSION-minimal/bin/:$PATH
+ENV PATH /usr/local/bin/activator-$ACTIVATOR_VERSION-minimal/bin/:$PATH
 
 RUN echo "====> install activator" && \
     cd /tmp && \
@@ -51,7 +51,7 @@ RUN echo "====> install activator" && \
 
 
 RUN echo "====> install boxfuse" && \
-    cd /tmp/ && \
+    cd /usr/local/bin/ && \
     wget $BOXFUSE && \
     tar xzf $BOXFUSE_DIR.tar.gz && \
     rm $BOXFUSE_DIR.tar.gz
