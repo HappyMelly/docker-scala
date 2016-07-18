@@ -11,6 +11,7 @@ cat << EOF | sbt
 set name := "SbtTest"
 set version := "1.0"
 set scalaVersion := "$SCALA_VERSION"
+
 session save
 exit
 EOF
