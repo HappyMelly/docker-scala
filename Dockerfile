@@ -45,7 +45,10 @@ RUN echo "===> get activator" && \
 ENV PATH /tmp/activator-$ACTIVATOR_VERSION-minimal/bin/:$PATH
 
 RUN echo "====> install activator" && \
-    activator about
+    cd /tmp && \
+    activator new dummy && \
+    rm -rf dummy
+
 
 RUN echo "====> install boxfuse" && \
     cd /tmp/ && \
