@@ -23,7 +23,7 @@ ENV FLYWAYDB          https://repo1.maven.org/maven2/org/flywaydb/flyway-command
 
 RUN echo "===> Update APT " && \
     apt-get update && apt-get install -y \
-    unzip 
+    unzip git
 
 # RUN echo "===> install from Typesafe repo (contains old versions but they have all dependencies we need later on)"  && \
 #     DEBIAN_FRONTEND=noninteractive \
