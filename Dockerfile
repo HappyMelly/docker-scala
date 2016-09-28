@@ -11,8 +11,8 @@ FROM sery0ga/scala
 MAINTAINER sery0ga <skotlov@gmail.com>
 
 ENV ACTIVATOR_VERSION 1.3.8
-ENV SBT_VERSION       0.13.8
-ENV BOXFUSE_VERSION   1.20.4.1035
+ENV SBT_VERSION       0.13.12
+ENV BOXFUSE_VERSION   1.22.0.1140
 ENV FLYWAYDB_VERSION  4.0.3
 ENV BOXFUSE_DIR       boxfuse-commandline-$BOXFUSE_VERSION
 ENV SCALA_TARBALL     http://www.scala-lang.org/files/archive/scala-2.11.8.deb
