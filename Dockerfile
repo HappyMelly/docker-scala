@@ -5,36 +5,27 @@
 # forked from: bad79s/scala
 #              - https://github.com/William-Yeh/docker-scala
 #
-# Version     0.3
+# Version     0.4
 
 FROM sery0ga/scala
 MAINTAINER sery0ga <skotlov@gmail.com>
 
-ENV ACTIVATOR_VERSION 1.3.8
-ENV SBT_VERSION       0.13.12
-ENV BOXFUSE_VERSION   1.22.2.1149
+ENV ACTIVATOR_VERSION 1.3.18
+ENV SBT_VERSION       0.13.18
+ENV BOXFUSE_VERSION   1.33.0.1460
 ENV FLYWAYDB_VERSION  4.0.3
 ENV BOXFUSE_DIR       boxfuse-commandline-$BOXFUSE_VERSION
-ENV SCALA_TARBALL     http://www.scala-lang.org/files/archive/scala-2.11.8.deb
+ENV SCALA_TARBALL     http://www.scala-lang.org/files/archive/scala-2.11.12.deb
 ENV SBT_TARBALL       https://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz
 ENV ACTIVATOR         https://downloads.typesafe.com/typesafe-activator/$ACTIVATOR_VERSION/typesafe-activator-$ACTIVATOR_VERSION-minimal.zip
 ENV BOXFUSE           https://files.boxfuse.com/com/boxfuse/client/boxfuse-commandline/$BOXFUSE_VERSION/$BOXFUSE_DIR.tar.gz
-ENV FLYWAYDB          https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/$FLYWAYDB_VERSION/flyway-commandline-$FLYWAYDB_VERSION.tar.gz      
+ENV FLYWAYDB          https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/$FLYWAYDB_VERSION/flyway-commandline-$FLYWAYDB_VERSION.tar.gz
 
 RUN echo "===> Update APT " && \
     apt-get update && apt-get install -y \
     unzip git
 
-# RUN echo "===> install from Typesafe repo (contains old versions but they have all dependencies we need later on)"  && \
-#     DEBIAN_FRONTEND=noninteractive \
-#         apt-get install -y --force-yes wget  && \
-#     wget http://apt.typesafe.com/repo-deb-build-0002.deb  && \
-#     dpkg -i repo-deb-build-0002.deb  && \
-#     apt-get update
-
 RUN echo "===> install Scala"  && \
-    # DEBIAN_FRONTEND=noninteractive \
-    #     apt-get install -y --force-yes libjansi-java  && \
     wget -nv $SCALA_TARBALL  && \
     dpkg -i scala-*.deb
 
@@ -49,7 +40,7 @@ RUN echo "===> get activator" && \
     rm -rf activator* && \
     wget $ACTIVATOR && \
     unzip *.zip && \
-    rm *.zip && \ 
+    rm *.zip && \
     cd /
 
 ENV PATH /usr/local/bin/activator-$ACTIVATOR_VERSION-minimal/bin/:$PATH
@@ -85,7 +76,6 @@ RUN echo "===> clean up..."  && \
     rm -f *.deb  && \
     apt-get clean  && \
     rm -rf /var/lib/apt/lists/*
-
 
 # create an empty sbt project;
 # then fetch all sbt jars from Maven repo so that your sbt will be ready to be used when you launch the image
