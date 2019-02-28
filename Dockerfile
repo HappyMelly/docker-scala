@@ -10,14 +10,12 @@
 FROM sery0ga/scala
 MAINTAINER sery0ga <skotlov@gmail.com>
 
-ENV ACTIVATOR_VERSION 1.3.18
-ENV SBT_VERSION       0.13.18
+ENV SBT_VERSION       0.13.17
 ENV BOXFUSE_VERSION   1.33.0.1460
 ENV FLYWAYDB_VERSION  4.0.3
 ENV BOXFUSE_DIR       boxfuse-commandline-$BOXFUSE_VERSION
 ENV SCALA_TARBALL     http://www.scala-lang.org/files/archive/scala-2.11.12.deb
-ENV SBT_TARBALL       https://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz
-ENV ACTIVATOR         https://downloads.typesafe.com/typesafe-activator/$ACTIVATOR_VERSION/typesafe-activator-$ACTIVATOR_VERSION-minimal.zip
+ENV SBT_TARBALL       https://piccolo.link/sbt-$SBT_VERSION.tgz
 ENV BOXFUSE           https://files.boxfuse.com/com/boxfuse/client/boxfuse-commandline/$BOXFUSE_VERSION/$BOXFUSE_DIR.tar.gz
 ENV FLYWAYDB          https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/$FLYWAYDB_VERSION/flyway-commandline-$FLYWAYDB_VERSION.tar.gz
 
@@ -34,22 +32,6 @@ RUN echo "===> install sbt"  && \
     wget $SBT_TARBALL && \
     tar xzf *.tgz && \
     cp -f sbt/bin/* /usr/local/bin/
-
-RUN echo "===> get activator" && \
-    cd /usr/local/bin && \
-    rm -rf activator* && \
-    wget $ACTIVATOR && \
-    unzip *.zip && \
-    rm *.zip && \
-    cd /
-
-ENV PATH /usr/local/bin/activator-$ACTIVATOR_VERSION-minimal/bin/:$PATH
-
-RUN echo "====> install activator" && \
-    cd /tmp && \
-    activator new dummy play-scala && \
-    rm -rf dummy
-
 
 RUN echo "====> install boxfuse" && \
     cd /usr/local/bin/ && \
