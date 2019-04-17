@@ -5,7 +5,7 @@
 # @see http://stackoverflow.com/a/12781664/714426
 #
 
-SCALA_VERSION=2.11.12
+SCALA_VERSION=2.12.8
 
 cat << EOF | sbt
 set name := "SbtTest"

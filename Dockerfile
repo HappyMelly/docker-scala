@@ -10,11 +10,11 @@
 FROM sery0ga/scala
 MAINTAINER sery0ga <skotlov@gmail.com>
 
-ENV SBT_VERSION       0.13.17
+ENV SBT_VERSION       1.2.1
 ENV BOXFUSE_VERSION   1.33.0.1460
 ENV FLYWAYDB_VERSION  4.0.3
 ENV BOXFUSE_DIR       boxfuse-commandline-$BOXFUSE_VERSION
-ENV SCALA_TARBALL     http://www.scala-lang.org/files/archive/scala-2.11.12.deb
+ENV SCALA_TARBALL     http://www.scala-lang.org/files/archive/scala-2.12.8.deb
 ENV SBT_TARBALL       https://piccolo.link/sbt-$SBT_VERSION.tgz
 ENV BOXFUSE           https://files.boxfuse.com/com/boxfuse/client/boxfuse-commandline/$BOXFUSE_VERSION/$BOXFUSE_DIR.tar.gz
 ENV FLYWAYDB          https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/$FLYWAYDB_VERSION/flyway-commandline-$FLYWAYDB_VERSION.tar.gz
