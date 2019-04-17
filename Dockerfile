@@ -24,6 +24,15 @@ RUN echo "===> Update APT " && \
     apt-get update && apt-get install -y \
     unzip git
 
+RUN echo "===> Install https transport" && \
+    apt-get install apt-transport-https
+
+RUN echo "===> Add SBT repository"  && \
+    echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823 && \
+    apt-get update
+
+
 RUN echo "===> Install wget " && \
     apt-get install wget
 
@@ -35,10 +44,12 @@ RUN echo "===> install Scala"  && \
     dpkg -i scala-*.deb
 
 RUN echo "===> install sbt"  && \
-    cd /tmp && \
-    wget $SBT_TARBALL && \
-    tar xzf *.tgz && \
-    cp -f sbt/bin/* /usr/local/bin/
+    apt-get install sbt
+#    cd /tmp && \
+#    wget $SBT_TARBALL && \
+#    tar xzf *.tgz && \
+#    cp -f sbt/bin/* /usr/local/bin/ && \
+#    chmod +x /usr/local/bin/sbt
 
 RUN echo "====> install boxfuse" && \
     cd /usr/local/bin/ && \
@@ -68,9 +79,9 @@ RUN echo "===> clean up..."  && \
 
 # create an empty sbt project;
 # then fetch all sbt jars from Maven repo so that your sbt will be ready to be used when you launch the image
-COPY test-sbt.sh /tmp/
+COPY build.sbt /tmp/
 RUN cd /tmp  && \
-    ./test-sbt.sh  && \
+    sbt about && \
     rm -rf *
 
 
