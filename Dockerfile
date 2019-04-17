@@ -7,7 +7,8 @@
 #
 # Version     0.4
 
-FROM sery0ga/scala
+FROM ubuntu:xenial
+
 MAINTAINER sery0ga <skotlov@gmail.com>
 
 ENV SBT_VERSION       1.2.1
@@ -22,6 +23,12 @@ ENV FLYWAYDB          https://repo1.maven.org/maven2/org/flywaydb/flyway-command
 RUN echo "===> Update APT " && \
     apt-get update && apt-get install -y \
     unzip git
+
+RUN echo "===> Install wget " && \
+    apt-get install wget
+
+RUN echo "===> Install JAVA" && \
+    apt-get install default-jre-headless -y
 
 RUN echo "===> install Scala"  && \
     wget -nv $SCALA_TARBALL  && \
