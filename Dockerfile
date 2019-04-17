@@ -37,7 +37,7 @@ RUN echo "===> Install wget " && \
     apt-get install wget
 
 RUN echo "===> Install JAVA" && \
-    apt-get install default-jre-headless -y
+    apt-get install default-jre default-jdk default-jre-headless -y
 
 RUN echo "===> install Scala"  && \
     wget -nv $SCALA_TARBALL  && \
@@ -83,7 +83,6 @@ COPY build.sbt /tmp/
 RUN cd /tmp  && \
     sbt about && \
     rm -rf *
-
 
 # Define default command.
 CMD ["scala"]
